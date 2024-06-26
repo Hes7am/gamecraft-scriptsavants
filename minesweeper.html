@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/minesweeper.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper" id="wrapper">
+        <div id="topBar" class="topBar">
+            <!--Logo-->
+            <img src="img/topBar/TBLogo.png" alt="Logo" id="tb-logo">
+            <!--HomeBTN-->
+            <a href="index.html" class="topBarItem" id="tb-home">
+                <img src="img/topBar/home.png" alt="Home" class="topBarIcon">
+                <div class="tbitemvertline"></div>
+                <p class="topBarText">Home</p>
+            </a>
+            <!--GamesBTN-->
+            <a href="gamesPage.html" class="topBarItem" id="tb-games">
+                <img src="img/topBar/games.png" alt="Games" class="topBarIcon">
+                <div class="tbitemvertline"></div>
+                <p class="topBarText">Games</p>
+            </a>
+            <!--AboutBTN-->
+            <a href="about.html" class="topBarItem" id="tb-about">
+                <img src="img/topBar/about.png" alt="About" class="topBarIcon">
+                <div class="tbitemvertline"></div>
+                <p class="topBarText">About</p>
+            </a>
+            <!--ContactBTN-->
+            <a href="contact.html" class="topBarItem" id="tb-contact">
+                <img src="img/topBar/contact.png" alt="Contact" class="topBarIcon">
+                <div class="tbitemvertline"></div>
+                <p class="topBarText">Contact</p>
+            </a>
+        </div>
+
+        <div class="content" id="content">
+            <!-- ============ Voeg hier je content toe ============ -->
+            <div class="MS-container" id="MS-container">
+                <h1>MINESWEEPER</h1>
+                <div class="scoreScreen" id="scoreScreen">
+                    <p class="timer" id="timer">Time: <br>0</p>
+                    <p class="bombs" id="bombs">Bombs: <br>40</p>
+                    <p class="points" id="points">Points: <br>1000</p>
+                    <p class="highscore" id="highscore">Highscore: <br>?</p>
+                </div>
+                <div class="game" id="game">
+                </div>
+                <div class="selectionbuttons">
+                    <button id="selectbtn" class="btnactive" onclick="btnselect()"><img src="pictures/shovel.webp" alt="" width="40px">Clear</button>
+                    <button id="flagbtn" class="" onclick="btnflag()"><img src="pictures/flag.webp" alt="" width="40px">Flag</button>
+                </div>
+                <div class="howtoplay" id="howtoplay" onclick="toggleExplaination()">how to play?</div>
+                
+                <!-- youwinSchreen -->
+                <div class="youwin hide" id="youwin">
+                    <center>
+                        <h1>YOU WIN</h1>
+                        <h1 id="score"></h1>
+                        <button id="playagain" onclick="playagain()">Play Again</button>
+                    </center>
+                </div>
+                <div class="youlose hide" id="youlose">
+                    <center>
+                        <h1>YOU LOSE</h1>
+                        <button id="playagain" onclick="playagain()">Play Again</button>
+                    </center>
+                </div>
+                <div class="explaination hide" id="explaination">
+                    <center>
+                        <p class="explainationText">
+                            The goal of minesweeper is to find all the mines in the minefield.<br><br>
+        
+                            You start the game with a 16x16 grid of squares, this is the minefield.<br>
+                            There are 40 mines randomly distributed in the minefield.<br><br>
+        
+                            If you click one of the squares you will start at a mine-free zone.<br>
+                            And you will see that the squares on the edges of that zone will have numbers on them.<br>
+                            These numbers tell you how many mines are ajacent to it.<br>
+                            So if it says 3, that means there are 3 mines around it.<br><br>
+        
+                            If you think a cell is free you can clear it by clicking it.<br>
+                            This will reveal a number on the cell you cleared.<br>
+                            This number again is how many mines are around that cell.<br><br>
+        
+                            If you are sure a cell contains a mine you can place a flag on it.<br>
+                            Placing a flag is done by clicking the "flag" button on the bottom of the screen and then clicking the cell you want to mark.<br><br>
+        
+                            But if you clear a cell with a mine instead of marking it, the mine will explode.<br>
+                            So try to think before clicking a cell.<br><br>
+        
+                            When you marked all the mines with a flag*, YOU WIN!<br><br>
+        
+                            * only the bombs, if the total flags are above 40 you still have to deselect the ones that aren't bombs
+                        </p>
+                        <button onclick="toggleExplaination()">Exit</button>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">Copyright © 2023</div>
+    <script src="js/main.js"></script>
+    <script src="js/minesweeper.js"></script>
+</body>
+</html>

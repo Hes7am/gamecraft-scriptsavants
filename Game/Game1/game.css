@@ -1,0 +1,420 @@
+* {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  user-select: none;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
+  background: rgb(85, 79, 89);
+}
+
+button,
+.result_box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0px 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: all 0.3s ease;
+}
+
+.rulesbutton {
+  margin-left: 330px;
+
+}
+
+.start button {
+  width: 220px;
+  height: 67.3px;
+  font-size: 25px;
+  font-weight: 500;
+  color: #d8c1db;
+  padding: 15px 30px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background: #000000;
+  cursor: pointer;
+  top: 450px;
+  left: 580px;
+  box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0px 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: 2px solid #a567ad;
+
+}
+
+#game {
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+}
+
+.img {
+  width: 125%;
+  height: 80%;
+  margin-left: 265px;
+  margin-top: 80px;
+  border: 6px solid #000000;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgb(255, 255, 255), 0px 0px 12px #ffffff;
+}
+
+#game #game-container,
+#game #tiles {
+  position: absolute;
+  width: 100%;
+  max-width: 600px;
+  height: 100%;
+  display: flex;
+  z-index: 2;
+}
+
+#game .score {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  z-index: 5;
+}
+
+#game .score p {
+  font-size: 40px;
+  width: auto;
+  color: rgb(255, 0, 85);
+  z-index: 5;
+}
+
+#game #game-container .line {
+  width: 25%;
+  border-right: solid 2px rgb(104, 104, 104);
+}
+
+#game #game-container #line4 {
+  border-right: none;
+}
+
+#game #tiles {
+  display: block;
+  overflow: hidden;
+}
+
+#game #tiles div {
+  width: 25%;
+  height: 30%;
+  position: absolute;
+  top: -30%;
+  background: rgb(0, 0, 0);
+  outline: none;
+  cursor: pointer;
+}
+
+.move {
+  transform: translateY(145vh);
+  transition: transform linear 2s;
+}
+
+.speedX1 {
+  transition: transform linear 1.5s;
+}
+
+.speedX2 {
+  transition: transform linear 1.25s;
+}
+
+.speedX3 {
+  transition: transform linear 1s;
+}
+
+.speedX4 {
+  transition: transform linear 0.75s;
+}
+
+.result_box {
+  background: #ffffff;
+  width: 450px;
+  height: auto;
+  padding: 25px 30px;
+  border-radius: 5px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+.result_box.activeResult {
+  z-index: 5;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.result_box .complete_text {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.result_box .score_text {
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.result_box .buttons {
+  position: relative;
+  display: flex;
+  margin: 20px 0;
+}
+
+.result_box .buttons button {
+  margin: 0 10px;
+  width: auto;
+  height: 40px;
+  padding: 0 20px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+  border: 1px solid #007bff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+@media(max-width: 1035px) {
+  .img {
+    margin-top: 150px;
+    margin-left: 27px;
+    width: 960px;
+    height: 515px;
+  }
+
+  #playButton {
+    margin-top: 30px;
+    margin-left: -200px;
+  }
+
+  .rulesbutton {
+    margin-top: 30px;
+    margin-left: 100px;
+  }
+}
+
+@media(max-width: 775px) {
+  .img {
+    margin-left: 16px;
+    margin-top: 150px;
+    width: 726px;
+    height: 530px;
+  }
+
+  #playButton {
+    margin-top: 50px;
+    margin-left: -345px;
+  }
+
+  .rulesbutton {
+    margin-top: 50px;
+    margin-left: -35px;
+  }
+  #rulesModal.modal {
+    padding: 1px 50px;
+  }
+}
+
+@media(max-width: 550px) {
+  .result_box {
+    width: 80%;
+  }
+ 
+
+}
+
+@media(max-width: 430px) {
+  .img {
+    margin-left: 16px;
+    width: 380px;
+    height: 570px;
+    margin-top: 15px;
+  }
+
+  .start button {
+    margin-left: -365px;
+  }
+
+  #playButton {
+    margin-top: -120px;
+    margin-left: -365px;
+  }
+
+  .rulesbutton {
+    margin-top: -2px;
+  }
+  #rulesModal.modal {
+    padding: 2px 80px;
+  }
+
+  .modal-content h3 {
+    position: relative;
+    margin-left: -70px;
+    top: 85px;
+    font-size: 12px;
+  }
+
+}
+
+@media(max-width: 395px) {
+  .img {
+    margin-left: 16px;
+    width: 350px;
+    height: 800px;
+    margin-top: 15px;
+  }
+
+  .start button {
+    margin-left: -385px;
+  }
+
+  #playButton {
+    margin-top: -15px;
+    margin-left: -385px;
+  }
+
+  .rulesbutton {
+    margin-top: 120px;
+  }
+  #rulesModal.modal {
+    padding: 2px 80px;
+  }
+
+  .modal-content h3 {
+    position: relative;
+    margin-left: 7px;
+    top: 8px;
+    font-size: 12px;
+  }
+  
+
+}
+
+@media(max-width: 380px) {
+  .img {
+    margin-left: 16px;
+    width: 330px;
+    height: 570px;
+    margin-top: 15px;
+  }
+
+  .start button {
+    margin-left: -392px;
+
+  }
+
+  #playButton {
+    margin-top: -115px;
+    margin-left: -392px;
+  }
+
+  #rulesModal.modal {
+    padding: 2px 80px;
+  }
+  .rulesbutton {
+    margin-top: -4px;
+  }
+
+  .modal-content h3 {
+    position: relative;
+    margin-left: -70px;
+    top: 85px;
+    font-size: 12px;
+  }
+}
+
+@media(max-width: 320px) {
+ 
+  .img {
+    margin-left: 20px;
+    width: 270px;
+    height: 565px;
+    margin-top: 16px;
+  }
+
+  .start button {
+    margin-left: -418px;
+
+  }
+  .rulesbutton {
+    margin-top: -4px;
+  }
+
+  #playButton {
+    margin-top: -120px;
+    margin-left: -418px;
+  }
+
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(90, 28, 101);
+  padding: 20px;
+  box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2), 0px 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index: 10;
+  max-width: 20%;
+  max-height: 50%;
+  overflow-y: auto;
+  border-radius: 6px;
+  box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0px 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: 2px solid #acacac;
+  overflow: hidden;
+}
+
+.modal-content {
+  color: #000000;
+  font-size: 16px;
+  line-height: 1.6;
+
+}
+
+.modal-content h3 {
+  color: white;
+  margin-top: -345px;
+  font-family: initial;
+
+}
+
+.modal-content h4 {
+  color: white;
+  margin-top: -300px;
+  font-family: initial;
+
+}
+
+.close {
+  position: absolute;
+  top: 0px;
+  right: -16px;
+  cursor: pointer;
+}

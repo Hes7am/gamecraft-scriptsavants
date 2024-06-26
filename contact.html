@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapper" id="wrapper">
+        <div id="topBar" class="topBar">
+            <!--Logo-->
+            <img src="img/topBar/TBLogo.png" alt="Logo" id="tb-logo" />
+            <!--HomeBTN-->
+            <a href="index.html" class="topBarItem" id="tb-home">
+                <img src="img/topBar/home.png" alt="Home" class="topBarIcon" />
+                <div class="tbitemvertline"></div>
+                <p class="topBarText">Home</p>
+            </a>
+            <!--GamesBTN-->
+            <a href="gamesPage.html" class="topBarItem" id="tb-games">
+                <img src="img/topBar/games.png" alt="Games" class="topBarIcon" />
+                <div class="tbitemvertline"></div>
+                <p class="topBarText">Games</p>
+            </a>
+            <!--AboutBTN-->
+            <a href="about.html" class="topBarItem" id="tb-about">
+                <img src="img/topBar/about.png" alt="About" class="topBarIcon" />
+                <div class="tbitemvertline"></div>
+                <p class="topBarText">About</p>
+            </a>
+            <!--ContactBTN-->
+            <a href="contact.html" class="topBarItem" id="tb-contact">
+                <img src="img/topBar/contact.png" alt="Contact" class="topBarIcon" />
+                <div class="tbitemvertline"></div>
+                <p class="topBarText">Contact</p>
+            </a>
+        </div>
+
+        <div class="content">
+            <div class="container">
+                <form action="process_form.php" method="post">
+                    <ul>
+                        <li>
+                            <label for="name"><span>Name <span class="required-star">*</span></span></label>
+                            <input type="text" id="name" name="user_name" />
+                        </li>
+                        <li>
+                            <label for="mail"><span>Email <span class="required-star">*</span></span></label>
+                            <input type="email" id="mail" name="user_email" />
+                        </li>
+                        <li>
+                            <label for="msg"><span>Message</span></label>
+                            <textarea id="msg" name="user_message" rows="4" cols="50"></textarea>
+                        </li>
+                        <li>
+                            <input type="submit" />
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer">Copyright © 2023</div>
+    <script src="index.js"></script>
+</body>
+
+</html>

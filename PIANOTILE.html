@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/x-icon" sizes="32x32" href="Game/Game1/logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Game/Game1/style.css">
+    <title>PIANOTILE</title>
+</head>
+
+<body>
+
+
+    <div id="topBar" class="topBar">
+        <!--Logo-->
+        <img src="img/topBar/TBLogo.png" alt="Logo" id="tb-logo">
+        <!--HomeBTN-->
+        <a href="index.html" class="topBarItem" id="tb-home">
+            <img src="img/topBar/home.png" alt="Home" class="topBarIcon">
+            <div class="tbitemvertline"></div>
+            <p class="topBarText">Home</p>
+        </a>
+        <!--GamesBTN-->
+        <a href="gamesPage.html" class="topBarItem" id="tb-games">
+            <img src="img/topBar/games.png" alt="Games" class="topBarIcon">
+            <div class="tbitemvertline"></div>
+            <p class="topBarText">Games</p>
+        </a>
+        <!--AboutBTN-->
+        <a href="about.html" class="topBarItem" id="tb-about">
+            <img src="img/topBar/about.png" alt="About" class="topBarIcon">
+            <div class="tbitemvertline"></div>
+            <p class="topBarText">About</p>
+        </a>
+        <!--ContactBTN-->
+        <a href="contact.html" class="topBarItem" id="tb-contact">
+            <img src="img/topBar/contact.png" alt="Contact" class="topBarIcon">
+            <div class="tbitemvertline"></div>
+            <p class="topBarText">Contact</p>
+        </a>
+    </div>
+
+
+    <div><img src="Game/Game1/img.jpg" class="img"></div>
+    <div class="start">
+        <button id="playButton">Play</button>
+        <button class="rulesbutton" onclick="showRules()">Rules</button>
+    </div>
+
+
+    <div id="game" style="display: none;">
+        <div id="game-container">
+            <div class="line" id="line1"></div>
+            <div class="line" id="line2"></div>
+            <div class="line" id="line3"></div>
+            <div class="line" id="line4"></div>
+        </div>
+        <div class="tiles" id="tiles"></div>
+        <div class="score">
+            <p id="score">0</p>
+        </div>
+    </div>
+
+    <div class="result_box">
+        <div class="icon">
+            <i class="fas fa-crown"></i>
+        </div>
+        <div class="complete_text">You've completed The Game!</div>
+        <div class="score_text">You've scored 0 points</div>
+        <div class="buttons">
+            <button class="restart">Replay</button>
+        </div>
+    </div>
+
+    <div id="rulesModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="hideRules()">&times;</span>
+          <h2>Game Rules:</h2>
+          <h3> <br> 1-Tap the black tiles. <br> 2-Earn points. <br> 3-Speed increases.
+            <br>4-Avoid white tiles. <br> 5-Aim for the highest score. <br> 6-Enjoy the music. <br> 7-Try again.
+          </h3>
+        </div>
+      </div>
+
+
+    <div class="footer">Copyright © 2023</div>
+</body>
+<script src="Game/Game1/game.js"></script>
+
+</html>

@@ -1,0 +1,302 @@
+:root{
+    /* Colors */
+    --background: #141418;
+    --gameBackground: #343438;
+    --gridBackground: #242428;
+    --cellColor: #454ade;
+    --cellColorHover: #353aCe;
+    --cellBorderColor: #242428;
+    --clickedColor: #141418;
+    --clickedColorHover: #141418;
+    --flaggedColor: #968FA7;
+    --flaggedColorHover: #867F97;
+    --mineColor: #ce1d1d;
+    --mineColorHover: #ce1d1d;
+    --numColor: #D3DAE1;
+}
+
+#MS-container {
+    width: 650px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--gameBackground);
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px auto 20px auto;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+button {
+    font-size: 20px;
+}
+
+#game {
+    background-color: var(--gridBackground);
+    padding: 10px;
+    border-radius: 5px;
+    width: 500px;
+    height: 500px;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+}
+
+#scoreScreen {
+    width: 600px;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    p {
+        font-size: 24px;
+    }
+}
+
+.cell {
+    background-color: var(--cellColor);
+    border-radius: 5px;
+    border: var(--cellBorderColor) solid 1px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: all 0.1s;
+}
+
+.cell:hover {
+    background-color: var(--cellColorHover);
+}
+
+/* Clicked */
+.clicked {
+    background-color: var(--clickedColor);
+}
+.clicked:hover {
+    background-color: var(--clickedColorHover);
+}
+
+/* Flagged */
+.flagged {
+    background-color: var(--flaggedColor);
+}
+.flagged:hover {
+    background-color: var(--flaggedColorHover);
+}
+
+/* Mine */
+.mine {
+    background-color: var(--mineColor);
+}
+.mine:hover {
+    background-color: var(--mineColorHover);
+}
+
+/* Numbers */
+.num {
+    color: var(--numColor);
+}
+
+.flagPic {
+    width: 30px;
+    height: 30px;
+}
+.bombPic {
+    width: 30px;
+    height: 30px;
+}
+
+
+.selectionbuttons {
+    width: 300px;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Select button */
+#selectbtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100px;
+    height: 100px;
+    background-color: #66f;
+    border: #222 solid 2px;
+    border-radius: 40px;
+    margin: 0px 3px 3px 0px;
+    box-shadow: 4px 4px 3px 0px rgba(0,0,0,0.75);
+    transition: all 0.1s;
+}
+#selectbtn.btnactive {
+    background-color: #99f;
+    margin: 2px 1px 1px 2px;
+    box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
+}
+#selectbtn:hover {
+    background-color: #88f;
+}
+
+/* FLAG button */
+#flagbtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100px;
+    height: 100px;
+    background-color: #aaa;
+    border: #222 solid 2px;
+    border-radius: 40px;
+    margin: 0px 3px 3px 0px;
+    box-shadow: 4px 4px 3px 0px rgba(0,0,0,0.75);
+    transition: all 0.1s;
+}
+#flagbtn.btnactive {
+    background-color: #ccc;
+    margin: 2px 1px 1px 2px;
+    box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
+}
+#flagbtn:hover {
+    background-color: #bbb;
+}
+
+.debugIsland {
+    background-color: blue;
+}
+
+
+/* youwinSchreen */
+.youwin {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.youwin h1 {
+    color: white;
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.youwin button {
+    padding: 10px 20px;
+    font-size: 24px;
+    background-color: #6f6;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.youwin button:hover {
+    background-color: #8f8;
+}
+
+/* youloseSchreen */
+.youlose {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.youlose h1 {
+    color: white;
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.youlose button {
+    padding: 10px 20px;
+    font-size: 24px;
+    background-color: #f66;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.youlose button:hover {
+    background-color: #f88;
+}
+
+/* ExplainationScreen */
+.howtoplay {
+    margin-top: 10px;
+    text-align: center;
+    color: blue;
+    text-decoration: underline;
+}
+
+.explaination {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+
+.show {
+    display: flex;
+}
+.hide {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    #game {
+        width: 300px;
+        height: 300px;
+    }
+
+    .cell {
+        font-size: 12px;
+        border-radius: 3px;
+    }
+
+    #scoreScreen {
+        width: 300px;
+        height: 50px;
+        p {
+            font-size: 16px;
+        }
+    }
+
+    .flagPic {
+        width: 15px;
+        height: 15px;
+    }
+    .bombPic {
+        width: 15px;
+        height: 15px;
+    }
+}
+
